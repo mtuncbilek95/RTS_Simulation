@@ -13,5 +13,19 @@ UCLASS()
 class RTS_SIMULATION_API ARTS_Controller : public APlayerController
 {
 	GENERATED_BODY()
+public:
+	
+	UFUNCTION(BlueprintCallable)
+	void MoveForward(float Value) const;
+	
+	UFUNCTION(BlueprintCallable)
+	void MoveRight(float Value) const;
+
+	UFUNCTION(BlueprintCallable)
+	void Zoom(float Value) const;
+	
+	UPROPERTY(EditAnywhere)
+	float MovementSpeed;
+
 	
 };
