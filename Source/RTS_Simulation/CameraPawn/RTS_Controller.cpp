@@ -6,6 +6,7 @@
 #include "Kismet/KismetMathLibrary.h"
 #include "RTS_CameraPawn.h"
 
+//Camera Move Forward
 void ARTS_Controller::MoveForward(float Value) const
 {
 	const FVector ActorLocation = GetPawn()->GetActorLocation();
@@ -14,6 +15,7 @@ void ARTS_Controller::MoveForward(float Value) const
 	GetPawn()->SetActorLocation(ActorLocation+PushedLocation,false,nullptr);
 }
 
+//Camera Move Right
 void ARTS_Controller::MoveRight(float Value) const
 {
 	const FVector ActorLocation = GetPawn()->GetActorLocation();
@@ -21,6 +23,7 @@ void ARTS_Controller::MoveRight(float Value) const
 	GetPawn()->SetActorLocation(ActorLocation+PushedLocation,false,nullptr);
 }
 
+//Camera Zoom
 void ARTS_Controller::Zoom(float Value) const
 {
 	const ARTS_CameraPawn* CameraPawn = Cast<ARTS_CameraPawn>(GetPawn());

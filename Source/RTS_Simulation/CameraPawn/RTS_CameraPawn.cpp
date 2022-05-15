@@ -27,7 +27,7 @@ ARTS_CameraPawn::ARTS_CameraPawn()
 void ARTS_CameraPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	SpringArm->SetWorldRotation(FRotator(-60,0,0));
 }
 
 // Called every frame
