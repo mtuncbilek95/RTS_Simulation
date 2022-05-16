@@ -15,6 +15,12 @@ public:
 	// Sets default values for this actor's properties
 	ATileSpawner();
 
+	UPROPERTY(Category=Components, VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
+	UInstancedStaticMeshComponent* TileBlock;
+
+	UPROPERTY(Category=Components, VisibleAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess = "true"))
+	USceneComponent* DefaultSceneComponent;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

@@ -9,6 +9,12 @@ ATileSpawner::ATileSpawner()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	DefaultSceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultRootComponent"));
+	RootComponent = DefaultSceneComponent;
+	
+	TileBlock = CreateDefaultSubobject<UInstancedStaticMeshComponent>(TEXT("InstancedStaticMesh"));
+	TileBlock->SetupAttachment(GetRootComponent());
+
 }
 
 // Called when the game starts or when spawned
@@ -33,9 +39,9 @@ void ATileSpawner::TileSpawn()
 	{
 		for(int j=0; j<Row; j++)
 		{
-			AActor* Tile = GetWorld()->SpawnActor<AActor>(ActorToSpawn, TileLocation, FRotator(0,0,0));
+			FTransform TileTransform = FTransform(TileLocation);
+			TileBlock->AddInstance(TileTransform);
 			TileLocation += FVector(0,1000,0);
-			TileArray.Add(Tile);
 		}
 		TileLocation += FVector(1000,-Row*1000,0);
 	}
