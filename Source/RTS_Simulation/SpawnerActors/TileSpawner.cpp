@@ -3,6 +3,8 @@
 
 #include "TileSpawner.h"
 
+#include "Math/TransformCalculus3D.h"
+
 // Sets default values
 ATileSpawner::ATileSpawner()
 {
@@ -44,9 +46,33 @@ void ATileSpawner::TileSpawn()
 			TileLocation += FVector(1000,0,0);
 		}
 		TileLocation += FVector(-Row*1000,1000,0);
+		
 	}
 	
+	/* ---------MORE ADVANCED APPROACH---------
+	Let say we have single unit length and total length for tiles.
+
+	Each tile's length
+	float singleTile = 500;
 	
+	Total tile's length
+	float totalTile= 5000;
+
+	int Row = totalTile/singleTile;
+	
+	float newScaleValue = singleTile/1000;
+
+	scaled Tiles
+	FScale TileScale = FScale(newScaleValue, newScaleValue, 1);
+
+	we can update centering value as
+	const float centering = (singleTile/2)*(Row-1);
+	
+	new transform data
+	FTransform TileTransform = FTransform(TileLocation, Scale);
+
+	Those implementations work just fine. 
+	 */
 }
 
 
