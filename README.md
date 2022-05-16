@@ -8,7 +8,7 @@ I didn't have time to spawn pointers to groups based on distance.
 
 I would like to add widget but NPC AI took all my time. I tried to move them in formation since the pointer will appear for group.
 
-Both have C++, mixed and Blueprints in project. I tried to implement my blueprint algorithms in C++. That is how I work basically.
+Project has C++, mixed and Blueprints in project. I tried to implement my blueprint algorithms in C++. That is how I work basically.
 
 
 Achieved:
