@@ -31,4 +31,7 @@ public:
 
 	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<AActor> ActorToSpawn;
+
+	UPROPERTY(BlueprintReadWrite)
+	TArray<AActor*> TileArray;
 };

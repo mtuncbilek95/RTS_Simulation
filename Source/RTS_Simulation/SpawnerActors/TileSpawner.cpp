@@ -26,17 +26,21 @@ void ATileSpawner::Tick(float DeltaTime)
 
 void ATileSpawner::TileSpawn()
 {
+	
 	FVector TileLocation = FVector(0, 0, 20);
 	//column x row matrix spawner
 	for(int i=0; i<Row; i++)
 	{
 		for(int j=0; j<Row; j++)
 		{
-			GetWorld()->SpawnActor<AActor>(ActorToSpawn, TileLocation, FRotator(0,0,0));
+			AActor* Tile = GetWorld()->SpawnActor<AActor>(ActorToSpawn, TileLocation, FRotator(0,0,0));
 			TileLocation += FVector(0,1000,0);
+			TileArray.Add(Tile);
 		}
 		TileLocation += FVector(1000,-Row*1000,0);
 	}
+	
+	
 }
 
 
