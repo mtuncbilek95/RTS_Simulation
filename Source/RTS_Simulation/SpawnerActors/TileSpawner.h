@@ -34,10 +34,5 @@ public:
 
 	UPROPERTY(BlueprintReadWrite,EditAnywhere)
 	int Row;
-
-	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
-	TSubclassOf<AActor> ActorToSpawn;
-
-	UPROPERTY(BlueprintReadWrite)
-	TArray<AActor*> TileArray;
+	
 };

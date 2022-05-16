@@ -32,8 +32,8 @@ void ATileSpawner::Tick(float DeltaTime)
 
 void ATileSpawner::TileSpawn()
 {
-	
-	FVector TileLocation = FVector(0, 0, 20);
+	const float centering = 500*(Row-1); //I'm using this to centered the whole tilemap.
+	FVector TileLocation = FVector(-centering, -centering, 20);
 	//column x row matrix spawner
 	for(int i=0; i<Row; i++)
 	{
@@ -41,9 +41,9 @@ void ATileSpawner::TileSpawn()
 		{
 			FTransform TileTransform = FTransform(TileLocation);
 			TileBlock->AddInstance(TileTransform);
-			TileLocation += FVector(0,1000,0);
+			TileLocation += FVector(1000,0,0);
 		}
-		TileLocation += FVector(1000,-Row*1000,0);
+		TileLocation += FVector(-Row*1000,1000,0);
 	}
 	
 	
