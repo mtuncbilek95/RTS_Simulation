@@ -32,7 +32,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void TileSpawn();
 
-	UPROPERTY(BlueprintReadWrite,EditAnywhere)
+	UPROPERTY(BlueprintReadWrite,EditAnywhere, Category="Default")
 	int Row;
 	
 };
